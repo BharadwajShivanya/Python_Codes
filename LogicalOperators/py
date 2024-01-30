@@ -1,0 +1,395 @@
+
+Logical Operators: and, or, not
+
+
+#example
+
+temp = 35
+print(temp > 10 and temp < 40) #and
+print(temp < 10 or temp < 40)
+print(not temp < 15)
+     
+if else statements
+
+
+temperature = 35
+if temperature > 30:
+  print("it's is hot day")
+  print("Drink plenty of water")
+elif temperature > 20:                               #(20,30]
+  print("it is a nice day!!")
+elif temperature > 10:                               #(10,20]
+  print("it is a bit colder")
+else:
+  print("it is colder")
+print("Enjoy")
+
+     
+Question: Write a python code for weight conversion(in Kg and Lbs)
+
+
+weight = float(input("weight"))
+unit = input("(K)g or (L)bs:")
+if unit == "K":
+  converted = weight / 0.45
+  print("weight in Lbs:" + str(converted))
+else:
+  converted = weight * 0.45
+  print("weight in Lbs:" + str(converted))
+     
+weight20
+(K)g or (L)bs:k
+weight in Lbs:9.0
+While loops
+
+
+i = 1
+while(i <=10):
+  print(i * '*')
+  i = i+1
+
+     
+Guess Game:
+
+
+Sec_num = 5
+guess_count = 0
+guess_limit = 3
+while guess_count < guess_limit:
+  guess =int(input('Guess: '))
+  guess_count += 1
+  if guess == Sec_num:
+    print("Correct")
+    break
+else:
+    print("sorry, You failed")
+
+
+     
+Guess: 1
+Guess: 2
+Guess: 3
+sorry, You failed
+Exercise:Building the Car game*
+
+command = ""
+while command.lower() != "quit":
+  command = input(" > ")             #to improve quality use .lower() here
+  if command.lower() == "start":
+
+    print("Car Started....")
+  elif command.lower() == "stop":
+    print("Car Stopped")
+  elif command.lower() == "help":
+    print("""
+    start - to start the car
+    stop - to stop the car
+    quit - to quit
+    """)
+  elif command.lower() == "quit":
+    break
+  else:
+    print("sorry, I don't understand the command")
+
+
+
+     
+ > start
+Car Started....
+ > start
+Car Started....
+ > stop
+Car Stopped
+ > stop
+Car Stopped
+ > quit
+Improve the above code
+
+
+
+     
+
+command = ""
+started = False
+while command.lower() != "quit":
+  command = input(" > ")             #to improve quality use .lower() here
+  if command.lower() == "start":
+    if started:
+      print("Car i already started! Don't press the start button again")
+    else:
+      started = True
+      print("Car Started....")
+
+  elif command.lower() == "stop":
+    if not started:
+      print("Car is already stopped! ")
+    else:
+      started = False
+      print("Car Stopped")
+  elif command.lower() == "help":
+    print("""
+    start - to start the car
+    stop - to stop the car
+    quit - to quit
+    """)
+  elif command.lower() == "quit":
+    break
+  else:
+    print("sorry, I don't understand the command")
+
+
+
+
+     
+ > stop
+Car is already stopped! 
+ > start
+Car Started....
+ > stop
+Car Stopped
+ > stop
+Car is already stopped! 
+ > quit
+
+# print("hello world")
+a = input("enter the first no. ")
+b = input("enter the second no. ")
+c = int(a + b)
+print(c)
+print(type(c))
+     
+
+sum = (10 + 20) * 50
+print("sum")
+print(sum)
+
+
+
+
+     
+sum
+1500
+*For loop*
+
+
+for item in 'python':
+  print(item)
+     
+p
+y
+t
+h
+o
+n
+
+for item in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:
+  print(item)
+     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+"""
+in python we have range function to implicitly mention the range of the list:
+example
+"""
+for item in range(10):
+  print(item)
+     
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+for item in range(10, 20):
+  print(item)
+     
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+
+for item in range(10, 30, 2):
+  print(item)
+     
+10
+12
+14
+16
+18
+20
+22
+24
+26
+28
+Escape Sequences:
+
+
+string = "This is a string"
+# Insert a single quote before the word "string"
+newStr = string[:10] + '\'' + string[10:]
+print(newStr)
+     
+
+#backslash
+print(" Printed string is \")
+     
+
+#new line
+print("This is the first line.\nThis is the second line.")
+     
+Carriage return:It is one of the special escape sequences in python that lets us return to the start of the line overwriting whatever was already written. It is denoted by ‘r’ followed by a backslash
+
+
+print("This is the first line.", end="\r")
+print("This is the second line.")
+     
+This is the second line.
+Tab: A Tab equals eight whitespaces and it can be implemented by writing backslash followed up by t. It is helpful in separating statements to improve the readability of string.
+
+
+print("First\tSecond\tThird")
+print("1\t2\t3")
+print("A\tB\tC")
+     
+First	Second	Third
+1	2	3
+A	B	C
+Backspace: When the \b escape sequence is used within a string, it moves the cursor one position to the left, as a matter of fact, it erases the character that was previously present at the position.
+
+
+print("abc\bdef")
+     
+Octal Value: There exists an escape sequence in python that can convert the octal value into a string. It is represented by ‘\ooo’ where ‘ooo’ is a sequence that has 3 values each ranging from 0 to 7. Let’s take an example to understand.
+
+
+print("Example of using the \141 escape sequence.")
+
+'''
+In this above-mentioned code, the print() function is being used
+ to print a string that contains the \141 as an escape sequence.
+  When the escape sequence is read, Python replaces the
+ corresponding ASCII character with the octal value 141, that is ‘a’
+'''
+     
+Example of using the a escape sequence.
+'\nIn this above-mentioned code, the print() function is being used\n to print a string that contains the a as an escape sequence.\n  When the escape sequence is read, Python replaces the\n corresponding ASCII character with the octal value 141, that is ‘a’\n'
+Hexadecimal Value: There exists an escape sequence in python that can convert the hexadecimal value into a string. It is represented by ‘\xhh’ where ‘xhh’ is a sequence that has 2 values each ranging from 0 to 9 and A to F. Let’s take an example to understand this better.
+
+
+print("Example of using the \x41 escape sequence.")
+     
+Example of using the A escape sequence.
+
+
+     
+
+
+     
+
+
+     
+Lists: A list is a collection which is ordered and changeable. In python lists are written with square brackets:
+
+
+names = ["sajid", "nadeem" ,"touseef", "shahid", "Ram"]
+print(names[0])
+print(names[-4])
+names[2] = "tousyf"
+print(names)
+
+print(names[0:3])
+
+names.append("Ajay")
+print(names)
+
+names.insert(0, "Rama")
+print(names)
+
+names.remove("nadeem")
+print(names)
+
+print("sajid" in names)
+
+print(len(names))
+
+names.clear()
+print(names)
+
+
+
+
+
+
+     
+
+numbers = [1,2,3,4,5,6]
+for i in numbers:
+  print(i)
+
+
+
+
+i = 1
+while i <= len(numbers):
+  print(i)
+  i =i + 1
+
+
+
+
+
+     
+range()
+
+
+numbers = range (10)
+print(numbers)
+
+for num in numbers:
+  print(num)
+
+
+numbers = range (10, 20)
+for num in numbers:
+  print(num)
+
+numbers = range (10, 20, 2)
+for num in numbers:
+  print(num)
+
+
+for num in range(10):
+  print(num)
+     
+
+
+     
+
+
+     
+
+
+     
+
+
+     
